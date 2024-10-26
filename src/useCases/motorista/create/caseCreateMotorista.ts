@@ -1,6 +1,7 @@
-import { Motorista } from "../../core/entities/Motorista";
-import { ExceptionAPI } from "../../providers/exceptions/Exception";
-import { ICreateMotoristaRepository } from "../../core/repository/motorista/ICreateMotoristaRepository";
+import { Motorista } from "../../../core/entities/Motorista";
+import { ICreateMotoristaRepository } from "../../../core/repository/motorista/ICreateMotoristaRepository";
+import { ExceptionAPI } from "../../../providers/exceptions/Exception";
+
 
 export class CaseCreateMotorista{
 

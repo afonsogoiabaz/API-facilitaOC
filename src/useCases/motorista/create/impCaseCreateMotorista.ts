@@ -1,7 +1,7 @@
-import { ICreateMotoristaRepository } from "../../core/repository/motorista/ICreateMotoristaRepository";
-import { Motorista } from "../../core/entities/Motorista";
-import type { typeMotorista } from "../../core/types";
-import { MotoristaModels } from "../../services/postgres/models/motoristaModels";
+import { Motorista } from "../../../core/entities/Motorista";
+import { ICreateMotoristaRepository } from "../../../core/repository/motorista/ICreateMotoristaRepository";
+import type { typeMotorista } from "../../../core/types";
+import { MotoristaModels } from "../../../services/postgres/models/motoristaModels";
 
 let motoristaModels = new MotoristaModels();
 

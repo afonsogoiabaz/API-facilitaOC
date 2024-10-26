@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { createMotoristaController } from "../../useCases/motorista";
-
+import { createMotoristaController } from "../../useCases/motorista/create";
 
 let routeMotorista = Router();
 
