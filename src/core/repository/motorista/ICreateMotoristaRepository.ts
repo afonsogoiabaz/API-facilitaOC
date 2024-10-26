@@ -5,5 +5,5 @@ export interface ICreateMotoristaRepository{
 
   verifyMotorista(cpf: string): Promise<typeMotorista>;
 
-  createMotorista(data: Motorista): Promise<number>;
+  createMotorista(data: Motorista): Promise<number | null>;
 }
