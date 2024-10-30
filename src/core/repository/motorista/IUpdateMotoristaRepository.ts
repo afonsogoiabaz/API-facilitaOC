@@ -1,4 +1,6 @@
+import type { updateMotoristaRequestDTO } from "../../DTO/motorista/updateMotoristaRequestDTO";
+
 export interface IUpdateMotoristaRepository{
 
-  updateMotorista():Promise<number>;
+  updateMotorista(id: string, data: updateMotoristaRequestDTO):Promise<number | null>;
 }
