@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { createMotoristaController } from "../../useCases/motorista/create";
+import { updateMotoristaController } from "../../useCases/motorista/update";
 
 let routeMotorista = Router();
 
@@ -11,11 +12,11 @@ let routeMotorista = Router();
 //   response.send('selecionado 1 cadastro de motorista');
 // });
 
-// routeMotorista.post('/edit/:id', (request: Request, response: Response)=>{
-//   response.send('alterado 1 motorista');
-// });
+routeMotorista.post('/edit/:id', async(request, response)=>{
+  await updateMotoristaController.handle(request, response);
+});
 
-routeMotorista.post('/cadastro', async (request, response)=>{
+routeMotorista.post('/cadastro', async(request, response)=>{
   await createMotoristaController.handle(request, response);
 });
 
