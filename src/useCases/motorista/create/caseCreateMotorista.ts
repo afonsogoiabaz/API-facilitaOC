@@ -1,3 +1,4 @@
+import type { createMotoristaRequestDTO } from "../../../core/DTO/motorista/createMotoristaRequestDTO";
 import { Motorista } from "../../../core/entities/Motorista";
 import { ICreateMotoristaRepository } from "../../../core/repository/motorista/ICreateMotoristaRepository";
 import { ExceptionAPI } from "../../../providers/exceptions/Exception";
@@ -7,7 +8,7 @@ export class CaseCreateMotorista{
 
   constructor(private createMotoristaRepository: ICreateMotoristaRepository){}
 
-  async execute(data: Motorista){
+  async execute(data: createMotoristaRequestDTO){
     let verifyCPFMotorista = await this.createMotoristaRepository.verifyMotorista(data.cpf);
 
     if(verifyCPFMotorista !== 0){

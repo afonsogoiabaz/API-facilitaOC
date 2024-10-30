@@ -1,4 +1,4 @@
-import { Motorista } from "../../../core/entities/Motorista";
+import type { createMotoristaRequestDTO } from "../../../core/DTO/motorista/createMotoristaRequestDTO";
 import { ICreateMotoristaRepository } from "../../../core/repository/motorista/ICreateMotoristaRepository";
 import type { typeMotorista } from "../../../core/types";
 import { MotoristaModels } from "../../../services/postgres/models/motoristaModels";
@@ -18,7 +18,7 @@ export class ImpCaseCreateMotorista implements ICreateMotoristaRepository{
     return buscaCPF.rows[0];
   };
 
-  async createMotorista(data: Motorista): Promise<number | null> {
+  async createMotorista(data: createMotoristaRequestDTO): Promise<number | null> {
 
     if(data.rg == null && data.orgaoexpeditor == null && data.telefone == null){
 

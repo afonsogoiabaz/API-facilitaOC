@@ -1,5 +1,5 @@
 import { formatException } from "../../../providers/exceptions/formatException";
-import { createMotoristaSchema } from "../../../providers/validation/zCreateMotorista";
+import { createMotoristaSchema } from "../../../providers/validation/motorista/zCreateMotorista";
 import { CaseCreateMotorista } from "./caseCreateMotorista";
 import { Request, Response } from "express";
 
