@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { createMotoristaController } from "../../useCases/motorista/create";
 import { updateMotoristaController } from "../../useCases/motorista/update";
+import { getAllMotoristaController } from "../../useCases/motorista/getAll";
 
 let routeMotorista = Router();
 
-// routeMotorista.get('/listagem', (request: Request, response: Response)=>{
-//   response.send('listagem de motoristas');
-// });
+routeMotorista.get('/listagem', async(request, response)=>{
+  await getAllMotoristaController.handle(request, response);
+});
 
 // routeMotorista.get('/listagem/:id', (request: Request, response: Response)=>{
 //   response.send('selecionado 1 cadastro de motorista');
