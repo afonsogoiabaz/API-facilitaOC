@@ -1,5 +1,5 @@
 import type { updateMotoristaRequestDTO } from '../../../core/DTO/motorista/updateMotoristaRequestDTO';
-import type { Motorista } from '../../../core/entities/Motorista';
+import { Motorista } from '../../../core/entities/Motorista';
 import * as db from '../pgIndex';
 
 export class MotoristaModels{
@@ -55,6 +55,24 @@ export class MotoristaModels{
           data.telefone,
           id
         ]
+      )
+    );
+  };
+
+  getAllMotorista = async()=>{
+    return(
+      await db.query(
+        `select * from motorista order by motorista.nome_motorista`,
+        []
+      )
+    );
+  };
+
+  getOneMotorista = async(id: string)=>{
+    return(
+      await db.query(
+        `select * from motorista where motorista.id_motorista = $1`,
+        [id]
       )
     );
   };
