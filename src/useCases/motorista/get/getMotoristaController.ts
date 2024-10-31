@@ -1,21 +1,31 @@
 import { formatException } from "../../../providers/exceptions/formatException";
-import { CaseGetAllMotorista } from "./caseGetMotorista";
+import { CaseGetMotorista } from "./caseGetMotorista";
 import { Request, Response } from "express";
 
-export class GetAllMotoristaController {
+export class GetMotoristaController {
 
-  constructor(private caseGetMotorista: CaseGetAllMotorista){}
+  constructor(private caseGetMotorista: CaseGetMotorista){}
 
   async handle(request: Request, response: Response){
-
+    
     try{
-      let result = await this.caseGetMotorista.execute();
+      let { id } = request.params;
+      let result = await this.caseGetMotorista.execute(id);
+
+      if(id == undefined){
+        return response.status(201).json({
+          status: response.statusCode,
+          message: "Há motoristas a serem listados",
+          data: result
+        });
+      }
 
       return response.status(201).json({
         status: response.statusCode,
-        message: "Há motoristas a serem listados",
+        message: "Motorista encontrado com sucesso!",
         data: result
       });
+
     }
 
     catch(err){

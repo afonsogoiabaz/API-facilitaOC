@@ -1,11 +1,11 @@
-import { IGetAllMotoristaRepository } from "../../../core/repository/motorista/IGetAllMotoristaRepository";
+import { IGetMotoristaRepository } from "../../../core/repository/motorista/IGetMotoristaRepository";
 import { ExceptionAPI } from "../../../providers/exceptions/Exception";
 
-export class CaseGetAllMotorista{
+export class CaseGetMotorista{
 
-  constructor(private getMotoristaRepository: IGetAllMotoristaRepository){}
-  async execute(){
-    let result = await this.getMotoristaRepository.getAllMotorista();
+  constructor(private getMotoristaRepository: IGetMotoristaRepository){}
+  async execute(id?: string){
+    let result = await this.getMotoristaRepository.getMotorista(id);
 
     if(result == null){
       throw new ExceptionAPI("Houve um erro ao buscar os motoristas", 400);

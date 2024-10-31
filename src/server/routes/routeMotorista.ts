@@ -1,17 +1,16 @@
 import { Router } from "express";
 import { createMotoristaController } from "../../useCases/motorista/create";
 import { updateMotoristaController } from "../../useCases/motorista/update";
-import { getAllMotoristaController } from "../../useCases/motorista/getAll";
-import { getOneMotoristaController } from "../../useCases/motorista/getOne";
+import { getMotoristaController } from "../../useCases/motorista/get";
 
 let routeMotorista = Router();
 
 routeMotorista.get('/listagem', async(request, response)=>{
-  await getAllMotoristaController.handle(request, response);
+  await getMotoristaController.handle(request, response);
 });
 
 routeMotorista.get('/listagem/:id', async(request, response)=>{
-  await getOneMotoristaController.handle(request, response);
+  await getMotoristaController.handle(request, response);
 });
 
 routeMotorista.post('/edit/:id', async(request, response)=>{
